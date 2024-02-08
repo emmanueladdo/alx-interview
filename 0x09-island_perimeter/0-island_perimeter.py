@@ -1,4 +1,4 @@
- #!/usr/bin/python3
+#!/usr/bin/python3
 """
 Module return the perimeter
 of a the island grid
