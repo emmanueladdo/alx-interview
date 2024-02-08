@@ -1,15 +1,12 @@
 #!/usr/bin/python3
 """
-Module return the perimeter
-of a the island grid
+    function def island_perimeter(grid): that returns
+    the perimeter of the island described in grid:
 """
 
 
-def island_perimter(grid):
-    """
-    Function takes Grid as arg
-    and returns the peimeter
-    """
+def island_perimeter(grid):
+    """return the perimeter of the island described in grid"""
     perimeter = 0
     i = 0
     while i < len(grid):
