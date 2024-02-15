@@ -4,41 +4,36 @@ Contains isPrime and isWinner Functions
 """
 
 
-def is_prime(n):
+def isPrime(n):
     """
     Returns prime numbers between 1 and n
     (sieve of Eratosthenes)
     """
-    prime_nums = []
+    primeNums = []
     sieve = [True] * (n + 1)
-
     for num in range(2, n + 1):
         if sieve[num]:
-            prime_nums.append(num)
+            primeNums.append(num)
             for i in range(num, n + 1, num):
                 sieve[i] = False
+    return primeNums
 
-    return prime_nums
 
-
-def is_winner(x, nums):
-    """Function to determine the winner of the Prime game"""
-    if x is None or nums is None or x == 0 or not nums:
+def isWinner(x, nums):
+    """Function to determine winner of Prime game"""
+    if x is None or nums is None or x == 0 or nums == []:
         return None
-
-    maria_count = 0
-    ben_count = 0
-
+    mariaCount = 0
+    benCount = 0
     for n in range(x):
-        prime_nums = is_prime(nums[n])
-        if len(prime_nums) % 2 != 0:
-            maria_count += 1
+        primeNums = isPrime(nums[n])
+        if len(primeNums) % 2 != 0:
+            mariaCount += 1
         else:
-            ben_count += 1
-
-    if maria_count > ben_count:
+            benCount += 1
+    if mariaCount > benCount:
         return "Maria"
-    elif ben_count > maria_count:
+    elif benCount > mariaCount:
         return "Ben"
     else:
         return None
